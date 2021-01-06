@@ -11,12 +11,12 @@ import ru.viktorpenkin.factorial.dto.NumDTO;
 public class FactController {
 
     @GetMapping("/{val}")
-    public NumDTO getFact(@PathVariable Integer val) {
+    public NumDTO getFact(@PathVariable Long val) {
         return new NumDTO(factorial(val));
     }
 
-    private Integer factorial(Integer n) {
-        Integer f = 1;
+    private Long factorial(Long n) {
+        Long f = 1L;
         for (int i = 1; i <= n; i++) {
             f *= i;
         }

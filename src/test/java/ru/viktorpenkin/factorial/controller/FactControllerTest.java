@@ -21,10 +21,10 @@ public class FactControllerTest {
         int i = r.nextInt(10);
         ResponseEntity<NumDTO> forEntity = template.getForEntity("http://localhost:8081/factorial/" + i,
                 NumDTO.class);
-        Integer actual = forEntity.getBody().getValue();
+        Long actual = forEntity.getBody().getValue();
 
-        int expected = 1;
-        for (int j = 1; j < i + 1; j++) {
+        Long expected = 1L;
+        for (Long j = 1L; j < i + 1; j++) {
             expected *= j;
         }
 
