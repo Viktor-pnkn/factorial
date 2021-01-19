@@ -4,6 +4,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import ru.viktorpenkin.factorial.dto.CommonDTO;
 import ru.viktorpenkin.factorial.dto.NumDTO;
 
 @RestController
@@ -11,8 +12,8 @@ import ru.viktorpenkin.factorial.dto.NumDTO;
 public class FactController {
 
     @GetMapping("/{val}")
-    public NumDTO getFact(@PathVariable Long val) {
-        return new NumDTO(factorial(val));
+    public CommonDTO getFact(@PathVariable Long val) {
+        return new CommonDTO("FACT", factorial(val));
     }
 
     private Long factorial(Long n) {
